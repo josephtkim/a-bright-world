@@ -1,0 +1,133 @@
+#controls-section {
+  width: 900px;
+  height: 410px;
+  margin: 0 auto;
+
+  padding-top: 40px;
+  color: white;
+  background-color: black;
+}
+
+#control-section {
+  margin: 0 auto;
+  width: 540px;
+  height: 200px;
+}
+
+.control-section-item {
+
+}
+
+/* Building info */
+#building-counts {
+  border: 1px solid white;
+  padding: 10px;
+
+  float: left;
+  height: 100%;
+}
+
+#building-section-title {
+  padding: 2px;
+}
+
+.type-count-section {
+  padding: 2px;
+}
+.purchase-upgrade-section {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.count-info {
+  text-align: right;
+}
+
+.building-type-title {
+  float: left;
+}
+.buy-button {
+
+}
+.upgrade-button {
+
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+.button {
+  padding: 2px;
+  cursor: default;  
+}
+
+.building-count-info {
+
+}
+.single-building-section {
+
+}
+#current-residential-count, #current-commercial-count, #current-agricultural-count {
+
+}
+
+
+/* Stats section */
+#menu {
+  border: 1px solid white;
+  padding: 10px;
+
+  float: right;
+  height: 100%;
+}
+
+.information-item {
+  padding: 2px;
+  text-align: left;
+}
+
+#menu-section-title {
+  padding: 2px;
+}
+#current-population, #current-money, #current-food {
+  text-align: right;
+  padding-right: 0;
+}
+
+#building-counts {
+  width: 320px;
+}
+
+#menu {
+  width: 163px;
+}
+
+/* Message section */
+#message-section {
+  margin: 0 auto;
+  text-align: center;
+
+  height: 40px;
+  width: 600px;
+
+  margin-top: 60px;
+}
+
+#message-section-two {
+  margin: 0 auto;
+  text-align: center;
+
+  height: 40px;
+  width: 600px;
+}
+
+#message-section-three {
+  margin: 0 auto;
+  text-align: center;
+
+  height: 40px;
+  width: 600px;
+}

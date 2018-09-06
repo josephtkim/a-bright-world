@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>A Bright World</title>
+
+    <script src="scripts/game.js"></script>
+
+    <script src="scripts/screen.js"></script>
+    <script src="scripts/controls.js"></script>
+    <script src="scripts/building.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="css/controls.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div id="game-container">
+      <div id="splash-screen">
+
+        <div id="title">A BRIGHT WORLD</div>
+        <div id="credits">
+          <div class="credit-item">LEAD ARTIST: ISAAC KIM</div>
+          <br />
+          <div class="credit-item">PROGRAMMER: JOSEPH KIM</div>
+        </div>
+
+        <div id="play-game-button">START</div>
+      </div>
+
+      <!-- Top half/screen of the game -->
+      <div id="top-half">
+        <div id="screen-section">
+          <canvas id="canvas" width="900" height="450"></canvas>
+        </div>
+      </div>
+
+      <!-- Bottom half/controls section of the game -->
+      <div id="bottom-half">
+        <div id="controls-section">
+          <div id="controls">
+            <div id="control-section">
+              <div id="building-counts" class="control-section-item">
+                <div id="building-section-title">BUILDINGS</div>
+                <br />
+                <div class="single-building-section building-count-info">
+                  <div class="type-count-section">
+                    <span class="building-type-title">RESIDENTIAL</span>
+                    <div class="count-info">
+                      <span id="current-residential-count">0</span>/<span id="max-residential">12</span>
+                    </div>
+                  </div>
+
+                  <div class="purchase-upgrade-section">
+                    <span class="button buy-button" id="build-house-button">BUY $10</span>
+                    <span class="button upgrade-button" id="upgrade-residential">UPGRADE</span>
+                  </div>
+                </div>
+                <br />
+
+                <div class="single-building-section building-count-info">
+                  <div class="type-count-section">
+                    <span class="building-type-title">COMMERCIAL</span>
+                    <div class="count-info">
+                      <span id="current-commercial-count">0</span>/<span id="max-commercial">12</span>
+                    </div>
+                  </div>
+
+                  <div class="purchase-upgrade-section">
+                    <span class="button buy-button" id="build-business-button">BUY $50</span>
+                    <span class="button upgrade-button" id="upgrade-commercial">UPGRADE</span>
+                  </div>
+                </div>
+                <br />
+
+                <div class="single-building-section building-count-info">
+                  <div class="type-count-section">
+                    <span class="building-type-title">AGRICULTURAL</span>
+                    <div class="count-info">
+                      <span id="current-agricultural-count">0</span>/<span id="max-agricultural">12</span>
+                    </div>
+                  </div>
+
+                  <div class="purchase-upgrade-section">
+                    <span class="button buy-button" id="build-farm-button">BUY $40</span>
+                    <span class="button upgrade-button" id="upgrade-agricultural">UPGRADE</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="menu" class="control-section-item">
+                <div id="menu-section-title">STATS</div>
+                <br />
+                <div class="population">
+                  <div class="information-item stat-title">POPULATION</div>
+                  <div class="information-item" id="current-population">0</div>
+                  <!-- /<span id="max-population">10</span> -->
+                </div>
+                <br />
+
+                <div class="money">
+                  <div class="information-item stat-title">MONEY</div>
+                  <div class="information-item" id="current-money">0</div>
+                </div>
+                <br />
+
+                <div class="food">
+                  <div class="information-item stat-title">FOOD</div>
+                  <div class="information-item" id="current-food">0</div>
+                  <!-- /<span id="max-food">0</span> -->
+                </div>
+              </div>
+            </div>
+
+            <div id="message-section">
+              <span id="message">WELCOME!</span>
+            </div>
+
+            <div id="message-section-two">
+              <span id="gameover-message"></span>
+            </div>
+
+            <div id="message-section-three">
+              <span id="completion-time"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      var game = new window.Game(canvas, ctx);
+      var screen = new window.Screen(canvas, ctx);
+      var control = new window.Controls();
+
+      function startGame() {
+        document.getElementById("splash-screen").style.display = "none";
+        game.play();
+      }
+
+      document.getElementById("play-game-button").onclick = startGame;
+    </script>
+  </body>
+</html>
