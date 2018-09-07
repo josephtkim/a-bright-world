@@ -5,5 +5,10 @@ Play it LIVE [here](http://kimbrosinc.com/projects/a_bright_world/)
 
 ![Screen shot](./a_bright_world.png)  
 
+## GAMEPLAY:  
+* Buy and Upgrade buildings of three different types.  
+* Each building type provides unique attributes to growth rates and maximum capacity of certain stats.  
+* The goal is to keep growing your population until the world becomes bright again.  Enjoy!
+
 ## CREDITS:  
 * Art by Isaac Kim  
