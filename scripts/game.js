@@ -167,6 +167,7 @@
     upgradeBuilding(type) {
       // If none to upgrade, exit
       if (this._buildingCounts[type] === 0) {
+        this.setMessageLabel("NOTHING TO UPGRADE");
         return;
       }
 
@@ -187,7 +188,7 @@
                 this.updateControlAndScreen();
               }
               else {
-                this.setMessageLabel("OOPS! YOU NEED $" + current.upgradePrice + " TO UPGRADE");
+                this.setMessageLabel("YOU NEED $" + current.upgradePrice + " TO UPGRADE");
               }
 
               return;
@@ -201,10 +202,11 @@
       }
     }
 
+    // Checks conditions for different stages of progress in game
     checkMainBuilding() {
       if (this.buildings[0].level === 4) { // Fully upgraded
         if (this._counts["population"] === 1000000) {
-          window.screen.currentBrightness = 7;
+          window.screen.currentBrightness = 4;
           this.setGameOver();
           window.screen.update();
         }
@@ -212,23 +214,23 @@
       }
       else if (this.buildings[0].level === 3) {
         if (this._counts["population"] >= 964000 && this.buildings.length === 37) {
-          this.upgradeMainBuilding(6);
+          this.upgradeMainBuilding(3);          
         }
         else if (this._counts["population"] >= 100000){
-          window.screen.currentBrightness = 5;
+          window.screen.currentBrightness = 3;
         }
       }
       else if (this.buildings[0].level === 2) {
         if (this._counts["population"] >= 50000) {
-          this.upgradeMainBuilding(4);
+          this.upgradeMainBuilding(2);          
         }
         else if (this._counts["population"] >= 5000){
-          window.screen.currentBrightness = 3;
+          window.screen.currentBrightness = 2;
         }
       }
       else if (this.buildings[0].level === 1) {
         if (this._counts["population"] >= 1000) {
-          this.upgradeMainBuilding(2);
+          this.upgradeMainBuilding(1);          
         }
         else if (this._counts["population"] >= 100){
           window.screen.currentBrightness = 1;
@@ -253,12 +255,15 @@
       this.updateControlAndScreen();
     }
 
-    updateControlAndScreen() {
-      window.control.update(this._counts["population"], this.maximum["population"],
-        this._counts["money"], this._counts["food"], this.maximum["food"],
-        this._buildingCounts["residential"],
+    updateControlAndScreen() {      
+      window.control.updateCurrentPopulation(this._counts["population"]);
+      window.control.updateCurrentMoney(this._counts["money"]);
+      window.control.updateCurrentFood(this._counts["food"]);
+      window.control.updateBuildingCount(this._buildingCounts["residential"],
         this._buildingCounts["commercial"],
         this._buildingCounts["agricultural"]);
+      window.control.updateMessageDisplay();
+
       window.screen.update();
     }
 
