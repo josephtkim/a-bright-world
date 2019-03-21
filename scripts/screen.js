@@ -8,19 +8,17 @@
       this._height = canvas.height;
 
       this.colors = [
-        "#1a1a1a",
-        "#333333",
-        "#4d4d4d",
-        "#737373",
-        "#999999",
-        "#bfbfbf",
-        "#e6e6e6",
-        "#ffffff"
+        "#000000",
+        "#1a1a1a",        
+        "#262626",        
+        "#444422",        
+        "#339933"
       ];
 
       this.currentBrightness = 0;
       this.topScreen = document.getElementById("top-half");
 
+      // Image assets
       // Main building
       const main1 = new Image();
       main1.src = "./assets/CentralBuildingLvl1.png";
