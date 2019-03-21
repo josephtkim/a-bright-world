@@ -30,18 +30,21 @@
       upgradeAgriculturalButton.onclick = this.upgradeAgricultural;
     }
 
-    update(population, maxPopulation, money, food, maxFood, rCount, cCount, aCount) {
+    updateCurrentPopulation(population) {
       this._currentPopulation.innerHTML = population;
-      this._currentMoney.innerHTML = money;
+    }
+    updateCurrentMoney(money) {
+      this._currentMoney.innerHTML = "$" + money;
+    }
+    updateCurrentFood(food) {
       this._currentFood.innerHTML = food;
-
-      // this._currentMaxPopulation.innerHTML = maxPopulation;
-      // this._currentMaxFood.innerHTML = maxFood;
-
-      this._currentResidentialBuildings.innerHTML = rCount;
-      this._currentCommercialBuildings.innerHTML = cCount;
-      this._currentAgriculturalBuildings.innerHTML = aCount;
-
+    }
+    updateBuildingCount(residentialBuildingCount, commercialBuildingCount, agriculturalBuildingCount) {
+      this._currentResidentialBuildings.innerHTML = residentialBuildingCount;
+      this._currentCommercialBuildings.innerHTML = commercialBuildingCount;
+      this._currentAgriculturalBuildings.innerHTML = agriculturalBuildingCount;
+    }
+    updateMessageDisplay() {
       if (window.game.messageClearCounter >= 9) {
         window.game.messageLabel.innerHTML = "";
       }

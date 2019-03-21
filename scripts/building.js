@@ -19,6 +19,7 @@
       this.y;
     }
 
+    // Sets the location coordinates of the building on the screen
     setLocation(coordinates) {
       var x = coordinates[0];
       var y = coordinates[1];
@@ -26,11 +27,9 @@
       this.y = (450 / 2) - (64 / 2) + (y * 48); // Other possible values y *: 48; 34
     }
 
-    upgrade() {
-      // Flat rate upgrade values for all building types
+    upgrade() {      
       this.level = this.level + 1;
       this.imageIndex = this.imageIndex + 1;
-
       this.upgradePrice = this.upgradePrice * 30;
 
       if (this.type === "residential") {
